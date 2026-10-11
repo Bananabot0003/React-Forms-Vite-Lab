@@ -1,5 +1,7 @@
 import React from "react";
 
+// Updates the search as the user types
+
 function Filter({ search, onSearchChange, onCategoryChange }) {
   return (
     <div className="Filter">

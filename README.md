@@ -1,95 +1,65 @@
-# React Controlled Components Lab
 
-## Learning Goals
+# Shopping Forms Lab
 
-- Implement a controlled form
+## Project Description
 
-## Introduction
+This project is a shopping list application built using React and Vite.
 
-In this lab, you'll write and use controlled components.
+The application allows users to view shopping items, search for specific items, filter items by category, and add new items to the shopping list.
 
-## Controlled Components
+## Features
 
-Now that we know how to handle form elements in React and how to set up
-controlled components, it's time to put that knowledge to the test. This lab is
-fairly extensive, but you'll use many core React concepts here that will surface
-again and again. Time to get some practice in!
+- Display shopping list items
+- Search for items by name
+- Filter items by category
+- Add new items using a form
+- Toggle between light and dark mode
+- Use React state to update the page
 
-We'll continue adding new features to the Shopping List app using controlled
-components. Make sure to familiarize yourself with the code before diving into
-the deliverables! Completing these deliverables will also require understanding
-of all the previous topics from this section, including initializing state,
-passing data and callback functions as props, and working with events.
+## Technologies Used
 
-## Deliverables
+- React
+- JavaScript
+- HTML
+- CSS
+- Vite
+- Vitest
 
-### Filter
+## Setup Instructions
 
-In the filter component, there is a new input field for searching our list.
-_When the user types in this field_, the list of items should be filtered so
-that only items with names that match the text are included.
+1. Clone the GitHub repository.
+2. Open the project folder in VS Code.
+3. Open the terminal.
+4. Install dependencies:
 
-- Determine where you need to add state for this feature. What components need
-  to know about the search text?
+    npm install
 
-- Once you've determined which component should hold the state for this feature,
-  set up your initial state, and connect that state to the input field.
-  Remember, we're trying to make this input a _controlled_ input — so the
-  input's value should always be in sync with state.
+5. Start the application:
 
-- After you've connected the input to state, you'll also need to find a way to
-  _set_ state when the input _changes_. To get the test passing, you'll need to
-  use a prop called `onSearchChange` as a callback.
+    npm run dev
 
-- Finally, after making those changes, you'll need to use that state value to
-  determine which items are being displayed on the page, similar to how the
-  category dropdown works.
+6. Open the local URL provided in the terminal.
 
-**Note**: you may be asking yourself, why are we making this input controlled
-when the `<select>` element is not a controlled input? Well, the `<select>`
-input should probably be controlled as well! The tests don't require it, but
-feel free to update the `<select>` element to be a controlled element.
+## Running Tests
 
-### ItemForm
+To run the provided tests, enter:
 
-There is a new component called `ItemForm` that will allow us to add new items
-to our shopping list. _When the form is submitted_, a new item should be created
-and added to our list of items.
+    npm test
 
-- Make all the input fields for this form controlled inputs, so that you can
-  access all the form data via state. When setting the initial state for the
-  `<select>` tag, use an initial value of "Produce" (since that's the first
-  option in the list).
+The tests check the search functionality, controlled inputs, filtering, and adding new items.
 
-- Handle the form's _submit_ event, and use the data that you have saved in
-  state to create a new item object with the following properties:
+## How It Works
 
-  ```jsx
-  const newItem = {
-    id: uuid(), // the `uuid` library can be used to generate a unique id
-    name: itemName,
-    category: itemCategory,
-  };
-  ```
+The App component manages the main shopping list state.
 
-- Add the new item to the list by updating state. To get the test passing,
-  you'll need to use a prop called `onItemFormSubmit` as a callback and pass the
-  new item to it.
+The ShoppingList component displays items and filters them based on the selected category and search text.
 
-  **NOTE**: to add a new element to an array in state, it's a good idea to use
-  the spread operator:
+The Filter component allows users to search and select a category.
 
-  ```jsx
-  function addElement(element) {
-    setArray([...array, element]);
-  }
-  ```
+The ItemForm component allows users to add new items using controlled form inputs.
 
-  The spread operator allows us to copy all the old values of an array into a
-  new array, and then add new elements as well. When you're working with state,
-  it's important to pass a _new_ array to the state setter function instead of
-  mutating the original array.
+React useState is used to manage data and update the application when changes occur.
 
-## Resources
+## Author
 
-- [React Forms](https://facebook.github.io/react/docs/forms.html)
+Hunter Williams
